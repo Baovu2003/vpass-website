@@ -88,7 +88,7 @@ const AboutUs = () => {
 
                 <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     {/* LEFT: Image + cards */}
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="bg-white shadow-md rounded-lg p-8 flex flex-col items-center text-center">
                             <Users width={40} height={40} />
                             <h3 className="mt-4 font-semibold text-gray-800 text-lg">Nghỉ dưỡng</h3>
@@ -138,7 +138,10 @@ const AboutUs = () => {
                             nghiệm dịch vụ & nghỉ dưỡng cao cấp trên toàn thế giới.
                         </p>
                     </div>
+
                 </div>
+
+
             </section>
 
 

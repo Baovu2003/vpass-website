@@ -19,7 +19,7 @@ export function Header() {
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
     return (
-        <header className="w-full border-b border-gray-200">
+        < >
             <div className="bg-[#1f2c63] text-white text-sm py-4 h-28 md:py-2 md:h-24">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start px-4 gap-2 md:gap-0">
                     <div className="flex items-center gap-2">
@@ -41,7 +41,7 @@ export function Header() {
             </div>
 
 
-            <div className="bg-white shadow-md max-w-7xl mx-4  md:mx-auto relative -mt-8 rounded-xl z-999 ">
+            <div className="sticky top-0 z-50 bg-white shadow-md max-w-7xl mx-4 md:mx-auto -mt-8 rounded-xl transition-all duration-300">
                 <div className="px-4 flex justify-between items-center h-16">
                     <Image src="/VPASSlogodark.png" alt="VPASS" width={40} height={40} className="object-contain md:hidden " />
 
@@ -97,6 +97,6 @@ export function Header() {
                     </nav>
                 )}
             </div>
-        </header>
+        </>
     )
 }

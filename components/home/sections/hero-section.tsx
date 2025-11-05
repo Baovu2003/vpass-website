@@ -25,7 +25,8 @@ const vacationCards: VacationCard[] = [
 
 export function HeroSection() {
     return (
-        <div className="relative w-full h-[60vh] overflow-hidden rounded-b-2xl shadow-lg -mt-9">
+        <div className="relative w-full min-h-[90vh] sm:min-h-[70vh] overflow-hidden rounded-b-2xl shadow-lg -mt-9">
+
             {/* Background Image with zoom animation */}
             <Image
                 src="/2408222797_BannerChomng.png"
@@ -43,11 +44,12 @@ export function HeroSection() {
                             <p className="text-xs md:text-sm font-semibold tracking-wider text-blue-100 uppercase">
                                 TỰ HÀO LÀ NỀN TẢNG TRAO ĐỔI KỲ NGHỈ ĐẦU TIÊN TẠI VIỆT NAM
                             </p>
-                            <h1 className="text-3xl md:text-4xl font-bold leading-snug drop-shadow-lg">
+                            <h1 className="text-xl sm:text-2xl md:text-4xl font-bold leading-snug drop-shadow-lg text-center md:text-left">
                                 Cùng VPASS ASIA tối ưu giá trị
                                 <br />
                                 kỳ nghỉ của bạn ngay hôm nay!
                             </h1>
+
                         </div>
 
                         {/* Search Bar */}
