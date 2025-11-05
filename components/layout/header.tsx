@@ -41,61 +41,63 @@ export function Header() {
             </div>
 
 
-            <div className="sticky top-0 z-50 bg-white shadow-md max-w-7xl mx-4 md:mx-auto -mt-8 rounded-xl transition-all duration-300">
-                <div className="px-4 flex justify-between items-center h-16">
-                    <Image src="/VPASSlogodark.png" alt="VPASS" width={40} height={40} className="object-contain md:hidden " />
+            <div>
+                <div className="sticky top-0 z-50 bg-white shadow-md max-w-7xl mx-4 md:mx-auto -mt-8 rounded-xl transition-all duration-300">
+                    <div className="px-4 flex justify-between items-center h-16">
+                        <Image src="/VPASSlogodark.png" alt="VPASS" width={40} height={40} className="object-contain md:hidden " />
 
-                    <nav className="hidden md:flex items-center gap-8">
-                        {navItems.map((item) => {
-                            const isActive = pathname === item.href
-                            return (
+                        <nav className="hidden md:flex items-center gap-8">
+                            {navItems.map((item) => {
+                                const isActive = pathname === item.href
+                                return (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className={`text-sm font-bold transition-all px-3 py-2 rounded-2xl
+                                            ${isActive
+                                                ? "bg-[#e6ecff] text-[#1f2c63] border-b-2 border-[#1f2c63]"
+                                                : "text-gray-700 hover:text-[#1f2c63] hover:bg-gray-100"
+                                            }
+                                        `}
+                                    >
+                                        {item.label}
+                                    </Link>
+
+                                )
+                            })}
+                        </nav>
+
+                        <div className="flex items-center gap-3">
+                            <button className="border border-amber-900 rounded-md p-2 hover:bg-gray-50">
+                                <User size={18} className="text-gray-600" />
+                            </button>
+                            <button className="border border-amber-900 rounded-md p-2 hover:bg-gray-50">
+                                <Flag size={20} className="text-red-600" />
+                            </button>
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="md:hidden border border-amber-900 rounded-md p-2 hover:bg-gray-50"
+                            >
+                                {isOpen ? <X size={20} className="text-gray-600" /> : <Menu size={20} className="text-gray-600" />}
+                            </button>
+                        </div>
+                    </div>
+
+                    {isOpen && (
+                        <nav className="md:hidden flex flex-col items-start gap-3 px-6 py-3 bg-white border-t rounded-b-xl">
+                            {navItems.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`text-sm font-bold transition-all px-3 py-2 rounded-2xl
-                                            ${isActive
-                                            ? "bg-[#e6ecff] text-[#1f2c63] border-b-2 border-[#1f2c63]"
-                                            : "text-gray-700 hover:text-[#1f2c63] hover:bg-gray-100"
-                                        }
-                                        `}
+                                    className="text-sm font-medium text-gray-700 hover:text-[#1f2c63]"
+                                    onClick={() => setIsOpen(false)}
                                 >
                                     {item.label}
                                 </Link>
-
-                            )
-                        })}
-                    </nav>
-
-                    <div className="flex items-center gap-3">
-                        <button className="border border-amber-900 rounded-md p-2 hover:bg-gray-50">
-                            <User size={18} className="text-gray-600" />
-                        </button>
-                        <button className="border border-amber-900 rounded-md p-2 hover:bg-gray-50">
-                            <Flag size={20} className="text-red-600" />
-                        </button>
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="md:hidden border border-amber-900 rounded-md p-2 hover:bg-gray-50"
-                        >
-                            {isOpen ? <X size={20} className="text-gray-600" /> : <Menu size={20} className="text-gray-600" />}
-                        </button>
-                    </div>
+                            ))}
+                        </nav>
+                    )}
                 </div>
-
-                {isOpen && (
-                    <nav className="md:hidden flex flex-col items-start gap-3 px-6 py-3 bg-white border-t rounded-b-xl">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="text-sm font-medium text-gray-700 hover:text-[#1f2c63]"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                    </nav>
-                )}
             </div>
         </>
     )
